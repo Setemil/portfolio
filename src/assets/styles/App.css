@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import "tailwindcss";
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-weight: 250;
+  font-style: normal;
+  font-size: large;
+}
+
+.card {
+  padding: 2em;
+}
