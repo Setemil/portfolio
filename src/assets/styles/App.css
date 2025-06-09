@@ -22,6 +22,7 @@ body {
   font-weight: 250;
   font-style: normal;
   font-size: large;
+  scroll-behavior: smooth;
 }
 
 .card {

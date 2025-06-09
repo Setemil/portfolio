@@ -1,5 +1,8 @@
 import React from "react";
 import { ExternalLink, Github, Calendar } from "lucide-react";
+import portfolioPic from "../assets/portfolio.png";
+import deskPic from "../assets/desk.png";
+import careerPic from "../assets/career.png";
 
 const Projects = () => {
   const projects = [
@@ -8,11 +11,9 @@ const Projects = () => {
       title: "Tech-Career Guidance Platform",
       description:
         "A full-stack guidance solution built with HTML, javaScript, and PHP. Features include user authentication, admin dashboard and Individual course roadmap display",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      image: careerPic,
       technologies: ["HTML", "CSS", "PHP", "JavaScript"],
       githubUrl: "https://github.com/Setemil/Tech-Career-Guidance-site",
-      liveUrl: "#",
       date: "2025",
     },
     {
@@ -20,11 +21,9 @@ const Projects = () => {
       title: "Portfolio Website",
       description:
         "A modern, responsive portfolio website showcasing my work and skills with smooth animations and interactive elements.",
-      image:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+      image: portfolioPic,
       technologies: ["React", "Tailwind CSS"],
       githubUrl: "https://github.com/Setemil/portfolio",
-      liveUrl: "https://portfolio-demo.com",
       date: "2024",
     },
     {
@@ -36,32 +35,18 @@ const Projects = () => {
         "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
       technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
       githubUrl: "https://github.com/username/weather",
-      liveUrl: "https://weather-dashboard-demo.com",
       date: "2023",
     },
     {
       id: 4,
-      title: "Task Management App",
+      title: "Class Management App",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-      technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+        "A collaborative class management application with real-time updates, drag-and-drop functionality, and class management capabilities.",
+      image: deskPic,
+      technologies: ["React", "Firebase", "Tailwind CSS"],
       githubUrl: "https://github.com/username/taskapp",
       liveUrl: "https://taskapp-demo.com",
       date: "2024",
-    },
-    {
-      id: 5,
-      title: "Data Visualization Tool",
-      description:
-        "An interactive data visualization platform that allows users to upload CSV files and create dynamic charts and graphs.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      technologies: ["React", "D3.js", "Python", "Flask"],
-      githubUrl: "https://github.com/username/dataviz",
-      liveUrl: "https://dataviz-demo.com",
-      date: "2023",
     },
   ];
 
@@ -138,17 +123,7 @@ const Projects = () => {
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </a>
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      className="flex items-center justify-center flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </a>
-                  )}
+                  
                 </div>
               </div>
             </div>

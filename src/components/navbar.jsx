@@ -63,7 +63,7 @@ export default function Navbar() {
                 <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
                   Setemi
                 </span>
-                <span className="text-white font-light">.dev</span>
+                <span className="text-white font-light-bold">.dev</span>
               </span>
             </a>
           </div>
