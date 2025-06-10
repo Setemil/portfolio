@@ -61,7 +61,7 @@ const Languages = () => {
       logo: gitLogo,
       category: "Tools",
       description: "Version control and collaborative development",
-      color: "from-gray-600 to-gray-800",
+      color: "from-orange-400 to-pink-500",
     },
     {
       name: "Firebase",
