@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import {
   Mail,
-  Phone,
+  Phone, 
   MapPin,
   Send,
-  Github,
-  Linkedin,
-  Twitter,
+  Github, 
+  Linkedin, 
+  Twitter, 
 } from "lucide-react";
 
 const Contact = () => {
@@ -18,6 +18,7 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,13 +31,36 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmissionMessage(null);
 
-    // Simulate form submission
+    const { name, email, subject, message } = formData;
+
+    const yourEmailAddress = "setemiloye@gmail.com";
+
+    const mailSubject = encodeURIComponent(`${subject}`);
+    const mailBody = encodeURIComponent(
+      `${name}\n` +
+        `${email}\n\n` +
+        `${message}\n\n` +
+        `Sent from your portfolio contact form.`
+    );
+
+    const mailtoLink = `mailto:${yourEmailAddress}?subject=${mailSubject}&body=${mailBody}`;
+
+    setSubmissionMessage("Preparing your email draft...");
+
+    // Open the user's email client
+    window.location.href = mailtoLink;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setFormData({ name: "", email: "", subject: "", message: "" });
-      alert("Message sent successfully!");
-    }, 2000);
+      setSubmissionMessage("Your email client should now be open.");
+    }, 1500); // Adjust delay as needed
+
+    setTimeout(() => {
+      setSubmissionMessage(null);
+    }, 5000);
   };
 
   const contactMethods = [
@@ -50,6 +74,33 @@ const Contact = () => {
       icon: MapPin,
       label: "Location",
       value: "Lagos, Nigeria",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+234 707 586 5775",
+      href: "tel:+2347075865775",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/setemil",
+      color: "hover:text-gray-400",
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/setemi-loye-234527353",
+      color: "hover:text-blue-400",
+    },
+    {
+      icon: Twitter,
+      label: "X",
+      href: "https://x.com/LoyeSetemi",
+      color: "hover:text-sky-400",
     },
   ];
 
@@ -94,8 +145,16 @@ const Contact = () => {
                 return (
                   <a
                     key={index}
-                    href={method.href}
+                    href={method.href} // This ensures the mailto link on the email icon works as well
                     className="group flex items-center space-x-4 p-4 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-purple-400/50 transition-all duration-300 hover:bg-gray-800/50"
+                    target={
+                      method.href?.startsWith("http") ? "_blank" : "_self"
+                    } // Open external links in new tab
+                    rel={
+                      method.href?.startsWith("http")
+                        ? "noopener noreferrer"
+                        : ""
+                    }
                   >
                     <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-6 h-6 text-purple-400" />
@@ -111,6 +170,28 @@ const Contact = () => {
                   </a>
                 );
               })}
+            </div>
+
+            <div className="pt-8">
+              <h4 className="text-lg font-semibold text-white mb-4">
+                Follow Me
+              </h4>
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group w-12 h-12 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/50 flex items-center justify-center hover:border-purple-400/50 transition-all duration-300 hover:scale-110 ${social.color}`}
+                    >
+                      <IconComponent className="w-5 h-5 text-gray-400 group-hover:scale-110 transition-all duration-300" />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
 
             {/* Call to Action */}
@@ -213,7 +294,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group relative w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="group relative w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-lg overflow-hidden transition-all duration-800 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   {isSubmitting ? (
@@ -230,6 +311,13 @@ const Contact = () => {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
+
+              {/* Submission Feedback Message */}
+              {submissionMessage && (
+                <p className="text-center text-gray-300 mt-4 text-sm animate-fadeIn">
+                  {submissionMessage}
+                </p>
+              )}
             </form>
           </div>
         </div>
