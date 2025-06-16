@@ -9,6 +9,9 @@ import gitLogo from "../assets/social.png";
 import firebaseLogo from "../assets/firebase.svg";
 import bootstrapLogo from "../assets/bootstrap.png";
 import tailwindLogo from "../assets/tailwind.svg";
+import MongoLogo from "../assets/mongo.svg";
+import ExpressLogo from "../assets/Express.svg";
+import nodeLogo from "../assets/node-js.png";
 
 const Languages = () => {
   const [hoveredTech, setHoveredTech] = useState(null);
@@ -66,7 +69,7 @@ const Languages = () => {
     {
       name: "Firebase",
       logo: firebaseLogo,
-      category: "Backend",
+      category: "Database",
       description: "Real-time database and authentication",
       color: "from-yellow-500 to-orange-600",
     },
@@ -83,6 +86,27 @@ const Languages = () => {
       category: "Frontend",
       description: "Utility-first CSS framework",
       color: "from-teal-400 to-cyan-600",
+    },
+    {
+      name: "Node.Js",
+      logo: nodeLogo,
+      category: "Backend",
+      description: "Javascript Development Environment",
+      color: "from-green-800 to-green-600",
+    },
+    {
+      name: "Mongo DB",
+      logo: MongoLogo,
+      category: "Database",
+      description: "Cloud Database",
+      color: "from-green-400 to-teal-600",
+    },
+    {
+      name: "Express JS",
+      logo: ExpressLogo,
+      category: "Backend",
+      description: "Javascript Library for backend development",
+      color: "from-gray-600 to-gray-400",
     },
   ];
 

@@ -3,6 +3,7 @@ import { ExternalLink, Github, Calendar } from "lucide-react";
 import portfolioPic from "../assets/portfolio.png";
 import deskPic from "../assets/desk.png";
 import careerPic from "../assets/career.png";
+import votrPic from "../assets/VOTR.png";
 
 const Projects = () => {
   const projects = [
@@ -44,9 +45,20 @@ const Projects = () => {
         "A collaborative class management application with real-time updates, drag-and-drop functionality, and class management capabilities.",
       image: deskPic,
       technologies: ["React", "Firebase", "Tailwind CSS"],
-      githubUrl: "https://github.com/username/taskapp",
+      githubUrl: "https://github.com/setemil/desk.io",
       liveUrl: "https://taskapp-demo.com",
       date: "2024",
+    },
+    {
+      id: 5,
+      title: "VOTR.io",
+      description:
+        "Votr.io is a dynamic platform that lets users effortlessly create and share interactive polls, surveys, and quizzes to gather feedback, test knowledge, or spark engagement — all in one place.",
+      image: votrPic,
+      technologies: ["React", "MongoDB", "Tailwind CSS", "Express JS"],
+      githubUrl: "https://github.com/setemil/VOTR.io",
+      liveUrl: "https://taskapp-demo.com",
+      date: "2025",
     },
   ];
 
@@ -123,7 +135,6 @@ const Projects = () => {
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </a>
-                  
                 </div>
               </div>
             </div>

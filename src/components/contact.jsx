@@ -12,7 +12,7 @@ import {
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    phone: "",
     subject: "",
     message: "",
   });
@@ -33,15 +33,15 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmissionMessage(null);
 
-    const { name, email, subject, message } = formData;
+    const { name, phone, subject, message } = formData;
 
     const yourEmailAddress = "setemiloye@gmail.com";
 
     const mailSubject = encodeURIComponent(`${subject}`);
     const mailBody = encodeURIComponent(
-      `${name}\n` +
-        `${email}\n\n` +
+      `Hi, my name is ${name}\n` +
         `${message}\n\n` +
+        `This is my phone number: ${phone}\n\n` +
         `Sent from your portfolio contact form.`
     );
 
@@ -235,20 +235,20 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <label
-                    htmlFor="email"
+                    htmlFor="phone"
                     className="text-sm font-medium text-gray-300"
                   >
-                    Email Address
+                    Phone Number
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-purple-400 focus:ring-1 focus:ring-purple-400/50 focus:outline-none transition-colors duration-300"
-                    placeholder="your@email.com"
+                    placeholder="081 2345 6789"
                   />
                 </div>
               </div>
