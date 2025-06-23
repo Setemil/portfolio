@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import reactLogo from "../assets/react.svg";
+import vuwLogo from "../assets/vue.svg";
 import htmlLogo from "../assets/html.png";
 import cssLogo from "../assets/CSS.png";
 import jsLogo from "../assets/js.png";
@@ -37,6 +38,13 @@ const Languages = () => {
       category: "Frontend",
       description: "ES6+, DOM manipulation, and async programming",
       color: "from-yellow-400 to-orange-500",
+    },
+    {
+      name: "Vue JS",
+      logo: vuwLogo,
+      category: "Frontend",
+      description: "Progressive JavaScript Framework",
+      color: "from-green-300 to-grey-500",
     },
     {
       name: "React",
