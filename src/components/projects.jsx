@@ -29,18 +29,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description:
-        "A responsive weather application that provides current conditions, forecasts, and weather maps with location-based services.",
-      image:
-        "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
-      githubUrl: "https://github.com/username/weather",
-      date: "2023",
-    },
-    {
-      id: 4,
-      title: "Class Management App",
+      title: "Desk.io",
       description:
         "A collaborative class management application with real-time updates, drag-and-drop functionality, and class management capabilities.",
       image: deskPic,
@@ -50,10 +39,10 @@ const Projects = () => {
       date: "2024",
     },
     {
-      id: 5,
-      title: "VOTR.io",
+      id: 4,
+      title: "VOTR",
       description:
-        "Votr.io is a dynamic platform that lets users effortlessly create and share interactive polls, surveys, and quizzes to gather feedback, test knowledge, or spark engagement — all in one place.",
+        "Votr is a dynamic platform that lets users effortlessly create and share interactive polls, surveys, and quizzes to gather feedback, test knowledge, or spark engagement — all in one place.",
       image: votrPic,
       technologies: ["React", "MongoDB", "Tailwind CSS", "Express JS"],
       githubUrl: "https://github.com/setemil/VOTR.io",
