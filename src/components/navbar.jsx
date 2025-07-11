@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Mail, Code } from "lucide-react";
 
 export default function Navbar() {
@@ -112,7 +112,7 @@ export default function Navbar() {
                 />
               </a>
               <a
-                href="https://linkedin.com/in/setemi-loye-234527353"
+                href="https://linkedin.com/in/setemi-loye"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 rounded-full transition-all duration-300 hover:scale-110 group"

@@ -6,16 +6,19 @@ import About from "./components/about";
 import Contact from "./components/contact";
 import "./assets/styles/App.css";
 
+
+// Main App Component
 function App() {
+
   return (
-    <>
+    <div >
       <Navbar />
       <Hero />
       <About />
       <Projects />
       <Languages />
       <Contact />
-    </>
+    </div>
   );
 }
 
