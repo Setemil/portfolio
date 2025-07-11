@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import portrait from '../assets/portrait.jpg'
+import my_cv from "../assets/Setemi_CV.pdf";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +19,7 @@ const About = () => {
 
   // Demo data since we don't have the actual assets
   const myPortrait = portrait;
-  const cv = "#";
+  const cv = my_cv;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -116,7 +117,7 @@ const About = () => {
             opacity: 1,
             scale: 1,
             rotationY: 0,
-            duration: 1.2,
+            duration: 1,
             ease: "power3.out",
           },
           "-=0.8"
